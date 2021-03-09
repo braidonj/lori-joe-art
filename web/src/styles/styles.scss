@@ -1,0 +1,324 @@
+$font: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+//Colors
+$white: #fff;
+$black: #000;
+$maroon: #83333e;
+$off-white: #f2f4f5;
+$grey: #d1d1d1;
+
+html,
+body {
+  font-family: $font;
+  font-size: 20px;
+  margin: 0;
+}
+
+html {
+  background-color: $black;
+  color: $white;
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0 0 80px;
+}
+
+html.home-page {
+  background: url(../images/home-page-background.jpg) no-repeat center center
+    fixed;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
+
+.container {
+  width: 1640px;
+  min-width: 1640px;
+  margin: 0 auto;
+  @media (max-width: 1440px) {
+    width: 1280px;
+    min-width: 1280px;
+  }
+  @media (max-width: 1280px) {
+    width: 976px;
+    min-width: 976px;
+  }
+  @media (max-width: 976px) {
+    width: 768px;
+    min-width: 768px;
+  }
+  @media (max-width: 768px) {
+    width: 320px;
+    min-width: 320px;
+  }
+}
+
+//HEADER
+header {
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  z-index: 10;
+  background-color: $black;
+  .inner-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    @media (max-width: 768px) {
+      display: grid;
+      grid-template-columns: auto;
+    }
+    .logo {
+      a {
+        font-size: 1.25rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+      }
+    }
+    .navigation {
+      nav {
+        .dropdown-content {
+          position: absolute;
+          visibility: hidden;
+          opacity: 0;
+          transition: visibility 0s, opacity 0.5s linear;
+          background-color: $black;
+          border-radius: 10px;
+          min-width: 160px;
+          z-index: 11;
+          a {
+            display: block;
+            margin: 1rem;
+          }
+        }
+        .dropdown:hover {
+          .dropdown-content {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+        a {
+          margin: 0 20px;
+          text-decoration: none;
+          letter-spacing: 1.75px;
+          text-transform: capitalize;
+          color: $white;
+          font-size: 0.75rem;
+          @media (max-width: 768px) {
+            margin-left: 0;
+            font-size: 0.65rem;
+          }
+          &:last-child {
+            margin-right: 0px;
+          }
+          &:hover {
+            color: $grey;
+          }
+        }
+      }
+    }
+  }
+}
+
+//FOOTER
+footer {
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: -9;
+  background-color: $black;
+  a {
+    color: #2b558a;
+    &:hover {
+      color: $grey;
+    }
+  }
+  .inner-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 80px;
+    p {
+      font-size: 0.5rem;
+    }
+  }
+}
+
+//LANDING PAGE NAV
+.home {
+  position: relative;
+  text-shadow: 2px 2px 4px #000000;
+  h1 {
+    font-size: 100px;
+    margin: 1rem 0;
+  }
+  .home-nav {
+    position: absolute;
+    top: 0;
+    left: 3rem;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin-bottom: 1rem;
+      &:hover {
+        transform: scale(1.05, 1.05);
+        transition-duration: 0.75s;
+      }
+    }
+    a {
+      font-size: 55px;
+      font-weight: bold;
+      &:hover {
+        color: $grey;
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    h1 {
+      font-size: 45px;
+    }
+    ul li a {
+      font-size: 35px;
+    }
+    .home-nav {
+      left: 2rem;
+    }
+  }
+}
+
+//GALLERIES PAGE
+#galleries-title {
+  margin-top: 100px;
+}
+.galleries {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin: 50px auto 0;
+  .gallery-card {
+    &:hover {
+      transform: scale(1.05, 1.05);
+      transition-duration: 0.25s;
+    }
+    .gatsby-image-wrapper {
+      border-radius: 2px;
+    }
+  }
+}
+
+//GALLERY
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 2rem;
+  align-items: center;
+  margin-top: 100px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  .gallery-item:hover {
+    transform: scale(1.05, 1.05);
+    transition-duration: 0.25s;
+  }
+  .painting {
+    border-radius: 0.1rem;
+  }
+}
+
+//Individual Paintings
+.painting-container {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-rows: 75% auto;
+  margin-top: 80px;
+  .painting-description {
+    h3 {
+      margin-top: 0;
+    }
+    font-size: 0.75rem;
+    text-align: center;
+    margin-bottom: 0;
+    #price-link {
+      text-decoration: underline;
+    }
+  }
+  a {
+    &:hover {
+      color: $grey;
+    }
+    &[disabled] {
+      pointer-events: none;
+      color: darkgrey;
+    }
+  }
+}
+
+//About page
+.about {
+  margin-top: 100px;
+  .about-content {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 65% auto;
+    @media (max-width: 768px) {
+      grid-template-columns: auto;
+      grid-template-rows: auto auto;
+    }
+  }
+  .gatsby-image-wrapper {
+    border-radius: 5px;
+  }
+}
+
+//Shop page
+.shop {
+  margin-top: 100px;
+  .shop-info {
+    margin-bottom: 50px;
+    a {
+      color: $white;
+      text-decoration: underline;
+      &:hover {
+        color: $grey;
+      }
+    }
+  }
+  .shop-items {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    align-items: center;
+    text-align: center;
+  }
+  .gatsby-image-wrapper {
+    border-radius: 5px;
+  }
+}
+
+.contact {
+  margin-top: 100px;
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin: 1rem 0;
+    }
+  }
+}
