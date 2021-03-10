@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import HomeHelmet from "../components/homeHelmet";
 import SEO from "../components/SEO";
 import "../styles/styles.scss";
-import { AiOutlineInstagram } from "@react-icons/all-files/Ai/AiOutlineInstagram";
+import { AiOutlineInstagram } from "@react-icons/all-files/ai/AiOutlineInstagram";
 import { IconContext } from "@react-icons/all-files";
 
 const IndexPage = () => {
