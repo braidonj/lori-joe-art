@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { AiOutlineInstagram } from "@react-icons/all-files/Ai/AiOutlineInstagram";
+import { AiOutlineInstagram } from "@react-icons/all-files/ai/AiOutlineInstagram";
 import { IconContext } from "@react-icons/all-files";
 
 const Header = () => (

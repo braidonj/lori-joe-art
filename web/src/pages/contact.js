@@ -7,7 +7,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import { MdEmail } from "@react-icons/all-files/md/MdEmail";
 import { MdPhone } from "@react-icons/all-files/md/MdPhone";
-import { AiOutlineInstagram } from "@react-icons/all-files/Ai/AiOutlineInstagram";
+import { AiOutlineInstagram } from "@react-icons/all-files/ai/AiOutlineInstagram";
 import { IconContext } from "@react-icons/all-files";
 
 const ContactPage = () => (
