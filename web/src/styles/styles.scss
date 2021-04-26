@@ -258,6 +258,9 @@ footer {
     #price-link {
       text-decoration: underline;
     }
+    @media (max-width: 320px) {
+      font-size: 0.65rem;
+    }
   }
   a {
     &:hover {
