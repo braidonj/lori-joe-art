@@ -5,7 +5,7 @@ const Footer = () => (
     <div className="container">
       <div className="inner-footer">
         <p>
-          All work &copy; Lori Joe Art {new Date().getFullYear()}. All Rights
+          Copyright &copy; Lori Joe Art {new Date().getFullYear()}. All Rights
           Reserved. Developed by{" "}
           <a href="mailto:braidon.joe@gmail.com">Braidon Joe</a>.
         </p>

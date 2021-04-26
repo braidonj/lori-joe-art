@@ -137,7 +137,7 @@ footer {
   z-index: -9;
   background-color: $black;
   a {
-    color: #2b558a;
+    color: $white;
     &:hover {
       color: $grey;
     }
@@ -257,6 +257,9 @@ footer {
     margin-bottom: 0;
     #price-link {
       text-decoration: underline;
+    }
+    .painting-footer {
+      font-size: 0.5rem;
     }
     @media (max-width: 320px) {
       font-size: 0.65rem;

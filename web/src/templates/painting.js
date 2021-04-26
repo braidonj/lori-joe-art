@@ -3,7 +3,6 @@ import { graphql, Link } from "gatsby";
 import Image from "gatsby-image";
 import SEO from "../components/SEO";
 import Header from "../components/header";
-import Footer from "../components/footer";
 import Pagination from "../components/Pagination";
 
 export const query = graphql`
@@ -84,31 +83,36 @@ export default function SinglePainting({ data, pageContext }) {
               )}{" "}
               {data.sanityPainting.prints ? " - Prints available" : ""}
             </p>
+            <Pagination
+              pagSlugs={pagSlugs}
+              gallery={pageContext.category}
+              currentSlug={pageContext.slug}
+            ></Pagination>
             <Link
               title="Back to Gallery"
               to={`/${data.sanityPainting.category}`}
             >
               &larr; Back to Gallery
             </Link>
-            <Pagination
-              pagSlugs={pagSlugs}
-              gallery={pageContext.category}
-              currentSlug={pageContext.slug}
-            ></Pagination>
             {data.sanityPainting.sold === false ||
             data.sanityPainting.prints ? (
-              <span>
-                <Link id="price-link" to="/contact">
-                  Contact for more information
-                </Link>
-              </span>
+              <p>
+                <span>
+                  <Link id="price-link" to="/contact">
+                    Contact for more information
+                  </Link>
+                </span>
+              </p>
             ) : (
               ""
             )}
+            <p className="painting-footer">
+              Copyright &copy; Lori Joe Art {new Date().getFullYear()}. All
+              Rights Reserved.
+            </p>
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
